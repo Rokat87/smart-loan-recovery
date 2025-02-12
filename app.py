@@ -1,3 +1,28 @@
+import streamlit as st
+import joblib
+import pandas as pd
+import os
+import urllib.request
+
+# Download model and preprocessing artifacts if they don't exist
+def download_file(url, file_path):
+    if not os.path.exists(file_path):
+        urllib.request.urlretrieve(url, file_path)
+
+MODEL_URL = "https://github.com/yourusername/smart-loan-recovery/releases/download/v1.0/loan_recovery_model.pkl"
+SCALER_URL = "https://github.com/yourusername/smart-loan-recovery/releases/download/v1.0/scaler.pkl"
+LABEL_ENCODERS_URL = "https://github.com/yourusername/smart-loan-recovery/releases/download/v1.0/label_encoders.pkl"
+
+download_file(MODEL_URL, "loan_recovery_model.pkl")
+download_file(SCALER_URL, "scaler.pkl")
+download_file(LABEL_ENCODERS_URL, "label_encoders.pkl")
+
+# Load preprocessing artifacts and model
+model = joblib.load("loan_recovery_model.pkl")
+scaler = joblib.load("scaler.pkl")
+label_encoders = joblib.load("label_encoders.pkl")
+
+# Rest of your app code...
 # Load necessary libraries
 import pandas as pd
 import numpy as np
