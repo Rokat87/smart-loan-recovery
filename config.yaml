@@ -1,0 +1,14 @@
+cookie:
+  expiry_days: 30
+  key: streamlit_auth_key
+  name: loan_recovery_cookie
+credentials:
+  user1:
+    name: John Doe
+    password: $2b$12$PdBtGxKZ0b/S1DccVy/.OexOlpWpiJJ370QbCTVlp5poemJbb/mSC
+  user2:
+    name: Jane Smith
+    password: $2b$12$GJH1YWY1NXzXo80luA5P3O0H2XQxlA7nZwcaY1QShaud7HLC7poCq
+preauthorized:
+  emails:
+  - admin@example.com
